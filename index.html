@@ -17,12 +17,13 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="img/logo/fevicon.webp" type="image/x-icon">
-
+ <link rel="preload" href="./img/whitecall.svg" as="image">
+    <link rel="preload" href="./img/whatsapp.svg" as="image">
   <!-- Load CSS Asynchronously -->
   <link rel="stylesheet" type="text/css" href="./css/purestyle.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
 
-  <!-- Font Awesome (Defer loading for better performance) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');">
+  <!-- Font Awesome (Defer loading for better performance)
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');"> -->
 
   <style>
     :root {
@@ -108,17 +109,20 @@
       </div>
     </nav>
   </header>
-  <ul class="mob-action nav nav-fill d-sm-block d-lg-none" style="height: 34px; width: 100%;">
-    <li class="nav-item"><a class="phone_url IVR_Phone_No_Url" style="text-28D146decoration: none; color: #fff;"
-        href="tel:undefined" type="tel">
-        <img src="./img/whitecall.svg" style="width: 20px; height: 20px; margin-right:5px" alt="WhatsApp Icon">
-        <i class="icon-phone action-icon"> </i> Call</a></li>
-    <li class="nav-item" style="background-color: #28D146;"><a class="whatsapp_url"
-        style="text-decoration: none; color: #fff;"
-        href="https://api.whatsapp.com/send?phone=+918976997450&amp;text=I want to know more about undefined Properties"><img
-          src="./img/whatsapp.svg" style="width: 20px; height: 20px; margin-right:5px" alt="WhatsApp Icon"><i
-          class="mi-whatsapp action-icon"></i> WhatsApp</a></li>
-  </ul>
+    <ul class="mob-action nav nav-fill d-sm-block d-lg-none">
+        <li class="nav-item">
+            <a class="phone_url IVR_Phone_No_Url" href="tel:+918976997450" style="color: #fff; display: flex; gap: 8px; align-items: center;">
+                <img src="./img/whitecall.svg" width="20" height="20;" alt="Call Icon">
+                <span>Call</span>
+            </a>
+        </li>
+        <li class="nav-item" style="background-color: #28D146;">
+            <a class="whatsapp_url" href="https://api.whatsapp.com/send?phone=+918976997450&amp;text=I want to know more about the property"style="color: #fff; display: flex; gap: 8px; align-items: center;">
+                <img src="./img/whatsapp.svg" width="20" height="20" alt="WhatsApp Icon">
+                <span>WhatsApp</span>
+            </a>
+        </li>
+    </ul>
   <main class="pload">
     <style>
       .card-d-custom {
@@ -144,11 +148,24 @@
       </ol>
      <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block micro-main-slider-img" src="img/banner/banner.webp" alt="First Slide" loading="eager">
+       <img class="d-block micro-main-slider-img" 
+     src="img/banner/banner-1080w.webp" 
+     srcset="img/banner/banner-480w.webp 480w, 
+             img/banner/banner-768w.webp 768w, 
+             img/banner/banner-1080w.webp 1080w" 
+     sizes="(max-width: 480px) 100vw, 
+            (max-width: 768px) 80vw, 
+            60vw" 
+     width="1080" height="auto"
+     alt="First Slide" 
+    loading="eager"
+     decoding="sync"
+     fetchpriority="high">
+
         </div>
-        <div class="carousel-item">
-          <img class="d-block micro-main-slider-img" src="img/banner/banner1.webp" alt="Second Slide" loading="eager">
-        </div>
+        <!-- <div class="carousel-item"> -->
+          <!-- <img class="d-block micro-main-slider-img" src="img/banner/banner1.webp" alt="Second Slide" loading="eager"> -->
+        <!-- </div> -->
         <!-- <div class="carousel-item">
         <img class="d-block micro-main-slider-img" src="img/banner/banner2.webp" alt="Third Slide">
       </div>
@@ -949,15 +966,15 @@
             <span class="modal-highlight-title">We Promise</span>
             <ul class="modal-highlight">
               <li>
-                <img class="modal-template-icon" src="img/modal-form-img/phone-call.webp" width="24" height="24" alt="Phone call icon">
+                <img class="modal-template-icon" src="img/modal-form-img/phone-call.webp" width="24" height="24" alt="Phone call icon" loading="lazy">
                 <span>Instant Call Back</span>
               </li>
               <li>
-                <img class="modal-template-icon" src="img/modal-form-img/placeholder.webp" width="24" height="24" alt="Location icon">
+                <img class="modal-template-icon" src="img/modal-form-img/placeholder.webp" width="24" height="24" alt="Location icon" loading="lazy">
                 <span>Free Site Visit</span>
               </li>
               <li>
-                <img class="modal-template-icon" src="img/modal-form-img/wallet-filled-money-tool.webp" width="24" height="24" alt="Wallet icon">
+                <img class="modal-template-icon" src="img/modal-form-img/wallet-filled-money-tool.webp" width="24" height="24" alt="Wallet icon" loading="lazy">
                 <span>Unmatched Price</span>
               </li>
             </ul>

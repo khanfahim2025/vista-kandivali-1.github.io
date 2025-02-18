@@ -749,8 +749,9 @@ button.close {
 
 .modal-dialog {
 	position: relative;
-	width: auto;
-	margin: 0.5rem;
+	width: 100%;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 	pointer-events: none;
 }
 
@@ -1747,17 +1748,17 @@ img.lazyload:not([src]) {
 		top: 0;
 		right: 0;
 		width: 22%;
-    max-width: 405px;
+		max-width: 405px;
 		height: 100vh;
 		background-color: #fff;
 		z-index: 1031;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+		transform: translateX(100%);
+		transition: transform 0.3s ease-in-out;
 	}
 
-  .micro-side.show {
-    transform: translateX(0); /* Slide-in effect */
-}
+	.micro-side.show {
+		transform: translateX(0); /* Slide-in effect */
+	}
 
 	.navbar.micro-navbar .nav-item,
 	.og-block .nav-item:first-child {
@@ -2507,7 +2508,7 @@ img.lazyload:not([src]) {
 
 	.micro-side {
 		width: 20%;
-    max-width: 488px;
+		max-width: 488px;
 	}
 
 	.micro-main-slider .carousel-item img {
@@ -2528,7 +2529,7 @@ img.lazyload:not([src]) {
 	.micro-main-slider,
 	.micro-main-slider .carousel-item img {
 		height: 100%;
-    width: 100%;
+		width: 100%;
 	}
 }
 
@@ -2594,7 +2595,7 @@ img.lazyload:not([src]) {
 
 	.carousel-item img {
 		height: 100% !important;
-    width: 100%;
+		width: 100%;
 	}
 
 	.section .head {
@@ -3381,6 +3382,7 @@ img {
 		color: var(--colorBtn);
 		box-shadow: 0 1px 6px 2px rgb(0 0 0 / 40%);
 		z-index: 1030;
+		min-height: 34px;
 	}
 
 	.mob-action .nav-item:not(:last-child) {
@@ -3391,7 +3393,6 @@ img {
 		padding: 7px 5px;
 		text-align: left;
 		font-size: 14px;
-		width: 32%;
 		display: inline-flex;
 		flex-direction: row;
 		align-items: center;
@@ -3479,7 +3480,7 @@ img {
 
 @media (min-width: 576px) and (max-width: 767px) {
 	.d-sm-block {
-		display: block !important;
+		display: flex !important;
 	}
 }
 
@@ -3697,7 +3698,7 @@ img {
 	height: 24px;
 	width: 24px;
 	margin-right: 5px;
-  object-fit: contain;
+	object-fit: contain;
 }
 /* .home-white-icon{
   content: url('../static/img/templateIcons/home.webp');
