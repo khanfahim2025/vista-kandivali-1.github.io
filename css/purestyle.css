@@ -1747,10 +1747,17 @@ img.lazyload:not([src]) {
 		top: 0;
 		right: 0;
 		width: 22%;
+    max-width: 405px;
 		height: 100vh;
 		background-color: #fff;
 		z-index: 1031;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
 	}
+
+  .micro-side.show {
+    transform: translateX(0); /* Slide-in effect */
+}
 
 	.navbar.micro-navbar .nav-item,
 	.og-block .nav-item:first-child {
@@ -2500,6 +2507,7 @@ img.lazyload:not([src]) {
 
 	.micro-side {
 		width: 20%;
+    max-width: 488px;
 	}
 
 	.micro-main-slider .carousel-item img {
@@ -2519,7 +2527,8 @@ img.lazyload:not([src]) {
 @media only screen and (min-height: 950px) {
 	.micro-main-slider,
 	.micro-main-slider .carousel-item img {
-		height: auto;
+		height: 100%;
+    width: 100%;
 	}
 }
 
@@ -2584,7 +2593,8 @@ img.lazyload:not([src]) {
 	}
 
 	.carousel-item img {
-		height: auto !important;
+		height: 100% !important;
+    width: 100%;
 	}
 
 	.section .head {
@@ -3687,6 +3697,7 @@ img {
 	height: 24px;
 	width: 24px;
 	margin-right: 5px;
+  object-fit: contain;
 }
 /* .home-white-icon{
   content: url('../static/img/templateIcons/home.webp');
