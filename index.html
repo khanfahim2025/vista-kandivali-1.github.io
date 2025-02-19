@@ -25,6 +25,18 @@
   <!-- Font Awesome (Defer loading for better performance)
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.onload=null;this.removeAttribute('media');"> -->
 
+    <!-- Preload the most important hero images -->
+    <link rel="preload" as="image" href="img/banner/banner-1080w.webp" imagesrcset="img/banner/banner-480w.webp 480w, img/banner/banner-768w.webp 768w, img/banner/banner-1080w.webp 1080w" imagesizes="(max-width: 480px) 100vw, (max-width: 768px) 80vw, 60vw" type="image/webp">
+    
+    <link rel="preload" as="image" href="img/banner/banner1-1080w.webp" imagesrcset="img/banner/banner1-480w.webp 480w, img/banner/banner1-768w.webp 768w, img/banner/banner1-1080w.webp 1080w" imagesizes="(max-width: 480px) 100vw, (max-width: 768px) 80vw, 60vw" type="image/webp">
+
+    <link rel="preload" as="image" href="img/modal-form-img/phone-call-optimized.webp">
+<link rel="preload" as="image" href="img/modal-form-img/placeholder-optimized.webp">
+<link rel="preload" as="image" href="img/modal-form-img/wallet-filled-money-tool.webp">
+<link rel="preload" as="image" href="img/logo/logo.webp">
+
+
+
   <style>
     :root {
       --colorSecondary: #273e3d;
@@ -109,7 +121,9 @@
       </div>
     </nav>
   </header>
-    <ul class="mob-action nav nav-fill d-sm-block d-lg-none">
+    <ul class="mob-action nav nav-fill d-sm-block d-lg-none" style="display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; transition: transform 0.2s ease-out;">
         <li class="nav-item">
             <a class="phone_url IVR_Phone_No_Url" href="tel:+918976997450" style="color: #fff; display: flex; gap: 8px; align-items: center;">
                 <img src="./img/whitecall.svg" width="20" height="20;" alt="Call Icon">
@@ -139,6 +153,41 @@
         text-align: center;
         margin: 0 auto 15px;
       }
+      @media (max-width: 768px) {
+    .image-container {
+        height: 372px;
+        width: 100%;
+        object-fit: cover;
+    height: 100% !important;
+    width: 100% !important;
+    }
+    .mobile-banner-container{ 
+      height: 240px;
+    }
+     .mobile-pricing{ 
+      height: 400px;
+    }
+    .mobile-about {
+      height: 800px;
+    }
+    .mobile-footer{
+      height: 436px;
+    }
+     .mobile-visit{
+      height: 321px;
+    }
+    .mobile-amenities{
+      height: 350px;
+    }
+    .mobile-overview{
+      height: 640px;
+    }
+    .modal-content {
+    min-width: 390px; /* Ensures modal width is predefined */
+    min-height: 280px; /* Prevents shifting */
+    transition: opacity 0.2s ease-in-out;
+}
+}
     </style>
     <div class="mobile_hero carousel slide micro-main-slider" id="home" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -146,9 +195,9 @@
         <li data-target="#home" data-slide-to="1"></li>
         <li data-target="#home" data-slide-to="2"></li>
       </ol>
-     <div class="carousel-inner">
-        <div class="carousel-item active">
-       <img class="d-block micro-main-slider-img" 
+     <div class="carousel-inner mobile-banner-container">
+        <div class="carousel-item active image-container">
+       <img class="d-block" 
      src="img/banner/banner-1080w.webp" 
      srcset="img/banner/banner-480w.webp 480w, 
              img/banner/banner-768w.webp 768w, 
@@ -158,13 +207,22 @@
             60vw" 
      width="1080" height="auto"
      alt="First Slide" 
-    loading="eager"
-     decoding="sync"
-     fetchpriority="high">
+     fetchpriority="high"
+     >
 
         </div>
-        <div class="carousel-item">
-          <img class="d-block micro-main-slider-img" src="img/banner/banner1.webp" alt="Second Slide" loading="eager">
+        <div class="carousel-item image-container">
+                <img class="d-block" 
+     src="img/banner/banner1-1080w.webp" 
+     srcset="img/banner/banner1-480w.webp 480w, 
+             img/banner/banner1-768w.webp 768w, 
+             img/banner/banner1-1080w.webp 1080w" 
+     sizes="(max-width: 480px) 100vw, 
+            (max-width: 768px) 80vw, 
+            60vw" 
+     width="1080" height="auto"
+     alt="First Slide" 
+     >
         </div>
         <!-- <div class="carousel-item">
         <img class="d-block micro-main-slider-img" src="img/banner/banner2.webp" alt="Third Slide">
@@ -184,7 +242,7 @@
     </div>
 
 
-    <div class="info-box overflow-hidden">
+    <div class="info-box overflow-hidden mobile-pricing">
       <div class="wrapper offer-bg-animation"><span class="zoom-in-zoom-out padding10">Available For A Limited Time
           Only!</span>
       </div>
@@ -262,7 +320,7 @@
             loading="lazy">Get It Now</button>
       </form>
     </div>
-    <section class="section shadow-sm lazyload" id="overview">
+    <section class="section shadow-sm lazyload mobile-overview" id="overview">
       <h1 class="d-block section-heading color-primary text-capitalize">Welcome to Anvita Ivana
       </h1>
       <p id="text" class="truncate-text">
@@ -407,7 +465,7 @@
               <div class="at-property-img lazyloaded" data-expand="-1"><img
                   class="w-100 lazyautosizes ls-is-cached lazyloaded ls-inview" data-sizes="auto" sizes="300px"
                   style="height: 150px; width: 200px;"
-                  src="img/floorplan/floor.png">
+                  src="img/floorplan/floor.webp" loading="lazy">
                 <div class="at-property-overlayer"></div> <span class="btn btn-default at-property-btn">Enquire
                   Now</span>
               </div>
@@ -433,7 +491,7 @@
             <div class="at-property-item mt-1">
               <div class="at-property-img master-plan text-center"><img class="lazyload shadow-sm border border-grey"
                   style="height: 200px; width: 200px;"
-                  data-sizes="auto" src="img/floorplan/floorPlan.webp">
+                  data-sizes="auto" src="img/floorplan/floorPlan.webp" loading="lazy">
                 <div class="at-property-overlayer"></div><span class="at-property-btn">View Plan </span>
               </div>
             </div>
@@ -443,7 +501,7 @@
             <div class="at-property-item mt-1">
               <div class="at-property-img master-plan text-center"><img class="lazyload shadow-sm border border-grey"
                   style="height: 200px; width: 200px;"
-                  data-sizes="auto" src="img/floorplan/masterPlan.webp">
+                  data-sizes="auto" src="img/floorplan/masterPlan.webp" loading="lazy">
                 <div class="at-property-overlayer"></div><span class="at-property-btn">View Plan </span>
               </div>
             </div>
@@ -451,16 +509,17 @@
             data-title="Send me plan details" data-btn="Send Now" data-enquiry="Get Master Plan" data-redirect="enquiry"
             data-toggle="modal" data-target="#enqModal">
             <div class="at-property-item mt-1">
-              <div class="at-property-img master-plan text-center"><img class="lazyload shadow-sm border border-grey"
+              <div class="at-property-img master-plan text-center">
+                <img class="lazyload shadow-sm border border-grey"
                   style="height: 200px; width: 200px;"
-                  data-sizes="auto" src="img/floorplan/unitPlan.webp">
+                  data-sizes="auto" src="img/floorplan/unitPlan.webp" loading="lazy">
                 <div class="at-property-overlayer"></div><span class="at-property-btn">View Plan </span>
               </div>
             </div>
           </a></div>
       </div>
     </section>
-    <section class="section shadow-sm lazyload" id="amenities"><span class="section-link"></span>
+    <section class="section shadow-sm lazyload mobile-amenities" id="amenities"><span class="section-link"></span>
       <div class="row">
         <div class="col-md-8">
           <h2 class="head text-capitalize">Amenities of Anvita Ivana
@@ -518,7 +577,7 @@
       </div>
     </section>
 
-    <section class="section shadow-sm lazyload" id="gallery"><span class="section-link"></span>
+    <section class="section shadow-sm lazyload mobile-about" id="gallery"><span class="section-link"></span>
       <div class="row">
         <div class="col-md-8">
           <h2 class="head text-capitalize">Gallery of Godrej Madison Avenue Kokapet</h2>
@@ -580,7 +639,7 @@
 
 
 
-    <section class="section shadow-sm lazyloaded" id="address_section">
+    <section class="section shadow-sm lazyloaded mobile-visit" id="address_section">
       <span class="section-link"></span>
       <h2 class="head text-capitalize">Location</h2>
       <iframe
@@ -647,7 +706,7 @@
 
 
 
-    <section class="section shadow-sm lazyloaded" id="sitevisit"><span class="section-link"></span>
+    <section class="section shadow-sm lazyloaded mobile-visit" id="sitevisit"><span class="section-link"></span>
       <h2 class="head text-capitalize">Virtual Tour Request</h2><a class="enqModal" href="#" data-form="lg"
         data-title="Virtual Site Visit" data-btn="Start Tour" data-enquiry="Virtual Site Visit    "
         data-redirect="virtualtour" data-toggle="modal" data-target="#enqModal">
@@ -671,10 +730,10 @@
         </div><span class="text-center d-block d-lg-none content-clr">Virtual Site visit</span>
       </a>
     </section>
-    <section class="section shadow-sm lazyload" id="developer">
+    <section class="section shadow-sm lazyload mobile-about" id="developer">
       <div class="d-block pt-2 pb-1 text-center ">
         <img class="aboutLogo" src="img/logo/logo.webp" loading="lazy"
-          style=" display: inline-block; margin-bottom: 2%;">
+          style=" display: inline-block; margin-bottom: 2%; height: 70px; width: 175px;">
       </div>
       <div class="row">
         <div class="col-md-8">
@@ -733,7 +792,7 @@
       <span class="pro-rera"><span class="heading">Company RERA Number</span> : A51900000136</span>
       <span class="d-block section-heading-sub1 text-capitalize">RERA Information</span>
     </section> -->
-    <section class="section shadow-sm lazyload" id="developer"
+    <section class="section shadow-sm lazyload mobile-footer" id="developer"
       style="text-align:justify;background:#f7f7f7 !important;"><small>
         <style>
           .newlist {
@@ -966,11 +1025,11 @@
             <span class="modal-highlight-title">We Promise</span>
             <ul class="modal-highlight">
               <li>
-                <img class="modal-template-icon" src="img/modal-form-img/phone-call.webp" width="24" height="24" alt="Phone call icon" loading="lazy">
+                <img class="modal-template-icon" src="img/modal-form-img/phone-call-optimized.webp" width="24" height="24" alt="Phone call icon" loading="lazy">
                 <span>Instant Call Back</span>
               </li>
               <li>
-                <img class="modal-template-icon" src="img/modal-form-img/placeholder.webp" width="24" height="24" alt="Location icon" loading="lazy">
+                <img class="modal-template-icon" src="img/modal-form-img/placeholder-optimized.webp" width="24" height="24" alt="Location icon" loading="lazy">
                 <span>Free Site Visit</span>
               </li>
               <li>
@@ -1090,6 +1149,15 @@
       document.getElementById("loader").remove();
       document.querySelector("header").classList.remove("pload");
       document.querySelector("main").classList.remove("pload");
+
+    // const images = document.querySelectorAll(".image-container");
+
+    // images.forEach(img => {
+    //     img.src = img.getAttribute("data-src"); // Move real image to src
+    //     img.srcset = img.getAttribute("data-srcset"); // Move real srcset
+    //     img.removeAttribute("data-src"); // Remove data attributes
+    //     img.removeAttribute("data-srcset");
+    // });
     });
     var sitePrimaryColor = "#2C2969";
   </script>
